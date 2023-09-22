@@ -1,0 +1,10 @@
+Maven Dependencies:
+
+1. JDBC Driver for MySQL: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.33
+2. JUnit5               : https://mvnrepository.com/artifact/org.junit/junit5-engine/5.0.0-ALPHA
+
+Website mit CO2 Daten: https://www.sonnblick.net/de/daten/zeitreihen/messung-co2/
+
+Informationsquellen:
+
+Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a-html-document/
