@@ -1,5 +1,8 @@
 package de.simonjpg.Backend.Crawler;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,6 +19,7 @@ import java.util.List;
  */
 
 public class WebCrawler {
+    private static final Logger LOGGER = LogManager.getLogger(WebCrawler.class);
     private final URL url;
     private static WebCrawler webCrawler;
 
@@ -25,6 +29,7 @@ public class WebCrawler {
      * @throws RuntimeException if url is null.
      */
     public WebCrawler(URL url) throws RuntimeException {
+        LOGGER.info("Instantiating new WebCrawler");
         if (url == null) {
             throw new RuntimeException("URL expected but null was given.\n");
         }
@@ -40,11 +45,12 @@ public class WebCrawler {
      * @return {@link de.simonjpg.Backend.Crawler.WebCrawler} instance.
      */
     public static WebCrawler instance(URL url) {
+        LOGGER.info("Referencing WebCrawler instance");
         if (webCrawler == null) {
             try {
                 webCrawler = new WebCrawler(url);
             } catch(RuntimeException e) {
-                System.err.printf("ERROR: %s", e.getMessage());
+                LOGGER.error(e.getMessage());
             }
         }
         return webCrawler;
@@ -59,6 +65,7 @@ public class WebCrawler {
      * @throws IOException if url is broken.
      */
     public List<Double> crawlCO2Data() throws IOException {
+        LOGGER.info("Crawling CO2 data");
         List<Double> co2Data = new ArrayList<>();
         String value;
 

@@ -1,10 +1,13 @@
 package de.simonjpg;
 
 import de.simonjpg.Backend.Backend;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.MalformedURLException;
 
 public class CO2App {
+    private static final Logger LOGGER = LogManager.getLogger(CO2App.class);
     private static final String banner = "    ____________                                      \n" +
             "   /   ______   \\                                    \n" +
             "  /   /      \\___\\                                  \n" +
@@ -29,7 +32,7 @@ public class CO2App {
 
     public static void main(String[] args) throws MalformedURLException {
         System.out.println(banner);
-        System.out.println("INFO: Starting Application: CO2 App.\n");
+        LOGGER.info("Starting Application CO2 App");
         new Backend().crawlData();
     }
 }

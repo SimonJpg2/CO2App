@@ -4,10 +4,6 @@ import de.simonjpg.Backend.Exceptions.ConnectionFailedException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class DatabaseTest {
 
     @Test

@@ -1,17 +1,20 @@
 package de.simonjpg.Backend.Database;
 
 import de.simonjpg.Backend.Exceptions.ConnectionFailedException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
+    private static final Logger LOGGER = LogManager.getLogger(Database.class);
+    private static Database database;
     private final String url;
     private Connection connection;
-    private static Database database;
-
     public Database() {
+        LOGGER.info("Instantiating new Database");
         /*
          * Change URL if you have an own database.
          * Pattern: "jdbc:mysql://{host}:{port}/{your database name}";
@@ -22,6 +25,7 @@ public class Database {
     }
 
     public static Database instance() {
+        LOGGER.info("Referencing database instance");
         if (database == null) {
             database = new Database();
         }
@@ -44,7 +48,7 @@ public class Database {
          */
         String password = "";
         String username = "";
-        System.out.println("(~) INFO: Connecting to MySQL database.");
+        LOGGER.info("Connecting to MySQL database");
         try {
             connection = DriverManager.getConnection(url, username, password);
             return connection;
@@ -62,11 +66,12 @@ public class Database {
 
     public void disconnect() {
         try {
+            LOGGER.info("Closing database connection");
             connection.close();
         } catch (SQLException e) {
-            System.err.printf("(!) ERROR: Connection can't be closed.%n%s%n", e.getMessage());
+            LOGGER.warn("Connection can't be closed {}", e.getMessage());
         } catch (NullPointerException e) {
-            System.err.println("(!) WARNING: Connection can't be closed, because there is no connection.\n");
+            LOGGER.warn("Connection can't be closed, because there is no connection");
         }
     }
 }
