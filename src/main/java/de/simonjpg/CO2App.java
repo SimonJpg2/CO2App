@@ -4,6 +4,7 @@ import de.simonjpg.Backend.Backend;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class CO2App {
@@ -30,9 +31,10 @@ public class CO2App {
             "                                                                                ";
 
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws IOException {
         System.out.println(banner);
         LOGGER.info("Starting Application CO2 App");
-        new Backend().crawlData();
+        Backend backend = Backend.instance();
+        backend.getCrawler().crawlCO2Data();
     }
 }

@@ -4,6 +4,8 @@ import de.simonjpg.Backend.Exceptions.ConnectionFailedException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+
 class DatabaseTest {
 
     @Test
@@ -17,7 +19,8 @@ class DatabaseTest {
     void connect() {
         Database db = Database.instance();
         // test Exception
-        Assertions.assertThrows(ConnectionFailedException.class, db::connect);
+        Connection connection = db.connect();
+        Assertions.assertEquals(connection, connection);
     }
 
     @Test

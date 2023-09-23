@@ -21,13 +21,32 @@ public class Database {
          * If your database is on your current machine, use localhost as host
          * Port 3306 is the default port for MySQL.
          */
-        this.url = "jdbc:mysql://db4free.net:3306/co2";
+        this.url = "jdbc:mysql://localhost:3306/co2";
+    }
+
+    public Database(String url) {
+        LOGGER.info("Instantiating new Database");
+        /*
+         * Change URL if you have an own database.
+         * Pattern: "jdbc:mysql://{host}:{port}/{your database name}";
+         * If your database is on your current machine, use localhost as host
+         * Port 3306 is the default port for MySQL.
+         */
+        this.url = url;
     }
 
     public static Database instance() {
         LOGGER.info("Referencing database instance");
         if (database == null) {
             database = new Database();
+        }
+        return database;
+    }
+
+    public static Database instance(String url) {
+        LOGGER.info("Referencing database instance");
+        if (database == null) {
+            database = new Database(url);
         }
         return database;
     }
@@ -46,11 +65,12 @@ public class Database {
          * Change the password and the username with your own credentials.
          * NOTE: Always use strong passwords for more security.
          */
-        String password = "";
-        String username = "";
+        String password = "kU8mKkfvEFa9uxZYh9FR";
+        String username = "java";
         LOGGER.info("Connecting to MySQL database");
         try {
             connection = DriverManager.getConnection(url, username, password);
+            LOGGER.info("Connection to MySQL Database established. Connected as user '{}'", username);
             return connection;
         } catch (SQLException e) {
             throw new ConnectionFailedException("Connection to database failed. \n", e.getCause());
