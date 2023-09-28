@@ -1,11 +1,13 @@
 package de.simonjpg;
 
 import de.simonjpg.Backend.Backend;
+import de.simonjpg.Backend.Extractor.ExtractCO2Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.util.List;
+import java.util.Map;
 
 public class CO2App {
     private static final Logger LOGGER = LogManager.getLogger(CO2App.class);
@@ -35,6 +37,14 @@ public class CO2App {
         System.out.println(banner);
         LOGGER.info("Starting Application CO2 App");
         Backend backend = Backend.instance();
-        backend.getCrawler().crawlCO2Data();
+        Map<Integer, List<String>> data = backend.getCrawler().getCO2Data();
+
+        for (int i = 0; i < data.size(); i++) {
+            List<String> co2data = data.get(i);
+            co2data.forEach(System.out::println);
+        }
+
+        List<Double> extractedData = new ExtractCO2Data().extractData("1990.0");
+        extractedData.forEach(System.out::println);
     }
 }

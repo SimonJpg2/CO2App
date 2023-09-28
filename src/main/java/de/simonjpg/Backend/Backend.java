@@ -1,25 +1,23 @@
 package de.simonjpg.Backend;
 
-import de.simonjpg.Backend.Crawler.WebCrawler;
+import de.simonjpg.Backend.Crawler.XLSXCrawler;
 import de.simonjpg.Backend.Database.Database;
 import de.simonjpg.Backend.Exceptions.ConnectionFailedException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.sql.Connection;
 
 public class Backend {
     private static final Logger LOGGER = LogManager.getLogger(Backend.class);
-    private final WebCrawler crawler;
+    private final XLSXCrawler xlsxCrawler;
     private final Connection connection;
     private static Backend backend;
 
     public Backend() throws MalformedURLException, ConnectionFailedException {
         LOGGER.info("Instantiating new Backend");
-        crawler = WebCrawler.instance(new URL("https://www.sonnblick.net/de/daten/zeitreihen/messung-co2/"));
+        xlsxCrawler = XLSXCrawler.instance();
         Database database = Database.instance();
         connection = database.connect();
     }
@@ -40,12 +38,12 @@ public class Backend {
         return backend;
     }
 
-    public WebCrawler getCrawler() {
-        LOGGER.info("Referencing Webcrawler");
-        if (crawler == null) {
+    public XLSXCrawler getCrawler() {
+        LOGGER.info("Referencing XLSXCrawler");
+        if (xlsxCrawler == null) {
             LOGGER.warn("Crawler instance is null");
         }
-        return crawler;
+        return xlsxCrawler;
     }
 
     public Connection getConnection() {

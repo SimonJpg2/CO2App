@@ -19,11 +19,11 @@ class WebCrawlerTest {
     }
 
     @Test
-    void crawlCO2Data() {
+    void crawlXlsxFile() {
         // check if Exception is thrown correctly.
         Assertions.assertThrows(IOException.class, () -> {
            WebCrawler webCrawler = new WebCrawler(new URL("doesnotExist"));
-           webCrawler.crawlCO2Data();
+           webCrawler.crawlXlsxFile();
         });
     }
 }

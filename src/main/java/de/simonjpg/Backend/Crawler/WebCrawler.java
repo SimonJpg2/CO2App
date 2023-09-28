@@ -3,12 +3,9 @@ package de.simonjpg.Backend.Crawler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class WebCrawler.
@@ -56,6 +53,18 @@ public class WebCrawler {
         return webCrawler;
     }
 
+    public static WebCrawler instance() {
+        LOGGER.info("Referencing WebCrawler instance");
+        if (webCrawler == null) {
+            try {
+                webCrawler = new WebCrawler(new URL("https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx"));
+            } catch(RuntimeException | MalformedURLException e) {
+                LOGGER.error(e.getMessage());
+            }
+        }
+        return webCrawler;
+    }
+
     /**
      * Method crawlCO2Data.
      * <p>
@@ -64,16 +73,8 @@ public class WebCrawler {
      * @return ArrayList with CO2 data.
      * @throws IOException if url is broken.
      */
-    public List<Double> crawlCO2Data() throws IOException {
-        LOGGER.info("Crawling CO2 data");
-        List<Double> co2Data = new ArrayList<>();
-        String value;
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-
-        while ((value = reader.readLine()) != null) {
-            System.out.println(value);
-        }
-        return co2Data;
+    public InputStream crawlXlsxFile() throws IOException {
+        LOGGER.info("Crawling xlsx File from {}", url.getPath());
+        return url.openStream();
     }
 }

@@ -1,6 +1,5 @@
 package de.simonjpg.Backend.Database;
 
-import de.simonjpg.Backend.Exceptions.ConnectionFailedException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
