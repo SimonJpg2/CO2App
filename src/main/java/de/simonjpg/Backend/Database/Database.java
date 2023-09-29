@@ -65,8 +65,8 @@ public class Database {
          * Change the password and the username with your own credentials.
          * NOTE: Always use strong passwords for more security.
          */
-        String password = "kU8mKkfvEFa9uxZYh9FR";
-        String username = "java";
+        String password = "";
+        String username = "";
         LOGGER.info("Connecting to MySQL database");
         try {
             connection = DriverManager.getConnection(url, username, password);
