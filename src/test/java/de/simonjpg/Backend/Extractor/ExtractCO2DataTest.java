@@ -29,6 +29,30 @@ class ExtractCO2DataTest {
         Assertions.assertEquals(74.22759177436751, actual.get(10));
         Assertions.assertEquals(42.608213558871, actual.get(11));
 
-        //TODO: Test the other rows
+        // Third Row
+        Assertions.assertEquals(435.4830708976622, actual.get(12));
+        Assertions.assertEquals(172.10367611823924, actual.get(13));
+        Assertions.assertEquals(190.4816353735875, actual.get(14));
+        Assertions.assertEquals(243.06849657648638, actual.get(15));
+        Assertions.assertEquals(71.41675325801206, actual.get(16));
+        Assertions.assertEquals(43.07200269392688, actual.get(17));
+
+        // Fourth Row
+        Assertions.assertEquals(425.71554935534476, actual.get(18));
+        Assertions.assertEquals(176.43246914495944, actual.get(19));
+        Assertions.assertEquals(197.20191069165276, actual.get(20));
+        Assertions.assertEquals(233.36923049160586, actual.get(21));
+        Assertions.assertEquals(70.93741008624352, actual.get(22));
+        Assertions.assertEquals(42.65010223389993, actual.get(23));
+
+        // // Fifth Row
+        Assertions.assertEquals(419.8008492496412, actual.get(24));
+        Assertions.assertEquals(172.40391048475252, actual.get(25));
+        Assertions.assertEquals(186.43733610524896, actual.get(26));
+        Assertions.assertEquals(237.14780467865657, actual.get(27));
+        Assertions.assertEquals(70.51083487880364, actual.get(28));
+        Assertions.assertEquals(41.49183545692716, actual.get(29));
     }
+
+    //TODO: Test for the other years
 }
