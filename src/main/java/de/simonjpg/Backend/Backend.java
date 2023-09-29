@@ -9,6 +9,14 @@ import org.apache.logging.log4j.Logger;
 import java.net.MalformedURLException;
 import java.sql.Connection;
 
+/**
+ * Class Backend
+ * <p>
+ *     Instantiates every component of the backend.
+ *     Contains all needed references for instances of the backend.
+ * </p>
+ * @author Simon Balcke
+ */
 public class Backend {
     private static final Logger LOGGER = LogManager.getLogger(Backend.class);
     private final XLSXCrawler xlsxCrawler;

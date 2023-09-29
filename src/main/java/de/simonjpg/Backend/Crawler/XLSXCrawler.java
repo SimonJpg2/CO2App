@@ -58,15 +58,19 @@ public class XLSXCrawler {
     public void readCO2Data() {
         LOGGER.info("Capturing CO2 data");
         try {
+            // Crawl the Excel file.
             Workbook workbook = new XSSFWorkbook(WebCrawler.instance(
                                 new URL("https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx")
                                 ).crawlXlsxFile());
+            // Get the sheet called "Daten".
             Sheet sheet = workbook.getSheetAt(workbook.getSheetIndex("Daten"));
             int i = 0;
             for (Row row : sheet) {
                 data.put(i, new ArrayList<>());
+                // Scrape everything from the sheet.
                 for (Cell cell : row) {
                     switch (cell.getCellType()) {
+                        // Get the correct values of the current cell type.
                         case STRING:   data.get(i).add(cell.getStringCellValue()); break;
                         case NUMERIC:  data.get(i).add(Double.toString(cell.getNumericCellValue())); break;
                         case BOOLEAN:  break;

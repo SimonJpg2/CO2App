@@ -1,16 +1,36 @@
 package de.simonjpg.Backend.Extractor;
 
 import de.simonjpg.Backend.Crawler.XLSXCrawler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class ExtractCO2Data.
+ * <p>
+ *     Used to filter specific information of an .xlsx file.
+ * </p>
+ * @author Simon Balcke
+ */
+
 public class ExtractCO2Data {
+    private static final Logger LOGGER = LogManager.getLogger(ExtractCO2Data.class);
+
+    /**
+     * Method extractData.
+     * <p>
+     *     Extracts CO2 data for a given year.
+     * </p>
+     * @param year the year of the CO2 data to be filtered for.
+     * @return a {@link java.util.List} with the CO2 data.
+     */
     public List<Double> extractData(String year) {
         List<Double> extractedData = new ArrayList<>();
         Map<Integer, List<String>> rawData = XLSXCrawler.instance().getCO2Data();
-
+        LOGGER.info("Extracting CO2 data of year {}", year);
         for (int i = 0; i < rawData.size(); i++) {
 
             /*
@@ -29,6 +49,7 @@ public class ExtractCO2Data {
              */
 
             if (!rawData.get(i).isEmpty() && rawData.get(i).get(0).equals(year)) {
+                LOGGER.debug("Extract data of {}. element of the HashMap", i);
                 // first row (row with the year of the values)
                 extractedData.add(Double.parseDouble(rawData.get(i).get(1)));
                 extractedData.add(Double.parseDouble(rawData.get(i).get(2)));
@@ -37,6 +58,7 @@ public class ExtractCO2Data {
                 extractedData.add(Double.parseDouble(rawData.get(i).get(5)));
                 extractedData.add(Double.parseDouble(rawData.get(i).get(6)));
 
+                LOGGER.debug("Extract data of {}. element of the HashMap", i + 1);
                 // second row
                 extractedData.add(Double.parseDouble(rawData.get(i + 1).get(0)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 1).get(1)));
@@ -45,6 +67,7 @@ public class ExtractCO2Data {
                 extractedData.add(Double.parseDouble(rawData.get(i + 1).get(4)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 1).get(5)));
 
+                LOGGER.debug("Extract data of {}. element of the HashMap", i + 2);
                 // third row
                 extractedData.add(Double.parseDouble(rawData.get(i + 2).get(0)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 2).get(1)));
@@ -53,6 +76,7 @@ public class ExtractCO2Data {
                 extractedData.add(Double.parseDouble(rawData.get(i + 2).get(4)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 2).get(5)));
 
+                LOGGER.debug("Extract data of {}. element of the HashMap", i + 3);
                 // fourth row
                 extractedData.add(Double.parseDouble(rawData.get(i + 3).get(0)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 3).get(1)));
@@ -61,6 +85,7 @@ public class ExtractCO2Data {
                 extractedData.add(Double.parseDouble(rawData.get(i + 3).get(4)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 3).get(5)));
 
+                LOGGER.debug("Extract data of {}. element of the HashMap", i + 4);
                 // fifth row
                 extractedData.add(Double.parseDouble(rawData.get(i + 4).get(0)));
                 extractedData.add(Double.parseDouble(rawData.get(i + 4).get(1)));
@@ -72,5 +97,5 @@ public class ExtractCO2Data {
         }
         return extractedData;
     }
-    // TODO: Add methods for 2020 and 2022
+    //TODO: Add methods for 2020 and 2022
 }
