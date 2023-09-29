@@ -8,11 +8,26 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Class Database.
+ * <p>
+ *     Class to handle every connection to the database.
+ * </p>
+ * @author Simon Balcke
+ */
+
 public class Database {
     private static final Logger LOGGER = LogManager.getLogger(Database.class);
     private static Database database;
     private final String url;
     private Connection connection;
+
+    /**
+     * Constructor Database.
+     * <p>
+     *     Sets url to db to jdbc:mysql://localhost:3306/co2
+     * </p>
+     */
     public Database() {
         LOGGER.info("Instantiating new Database");
         /*
@@ -24,6 +39,12 @@ public class Database {
         this.url = "jdbc:mysql://localhost:3306/co2";
     }
 
+    /**
+     * Constructor Database.
+     * <p>
+     *     For testing purposes.
+     * </p>
+     */
     public Database(String url) {
         LOGGER.info("Instantiating new Database");
         /*
@@ -43,6 +64,14 @@ public class Database {
         return database;
     }
 
+    /**
+     * Method instance.
+     * <p>
+     *     For testing purposes.
+     * </p>
+     * @param url url to test database.
+     * @return connection to database.
+     */
     public static Database instance(String url) {
         LOGGER.info("Referencing database instance");
         if (database == null) {
