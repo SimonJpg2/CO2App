@@ -4,6 +4,7 @@ Maven Dependencies:
 2. JUnit5               : https://mvnrepository.com/artifact/org.junit/junit5-engine/5.0.0-ALPHA
 3. Log4J                : https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.20.0
 4. Log4J Core           : https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.20.0
+5. apache poi           : https://mvnrepository.com/artifact/org.apache.poi/poi/5.2.4
 
 Website mit CO2 Daten: https://www.sonnblick.net/de/daten/zeitreihen/messung-co2/
 
@@ -14,3 +15,4 @@ Informationsquellen:
 Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a-html-document/
 Log4J:      https://www.baeldung.com/java-logging-intro
 MySQL berechtigungen: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+Apache Poi: https://poi.apache.org/apidocs/index.html
