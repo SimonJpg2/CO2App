@@ -1,6 +1,5 @@
 <h1 align="center">Anwendung CO2App</h1>
 
-****
 
 ## Inhaltsverzeichnis
 1. Projektbeschreibung
@@ -8,7 +7,6 @@
 3. Installationsanleitung
 4. Bekannte Fehler
 5. Technologies
-****
 
 ## Leitfaden für die Installation unter Windows:
 <p><img align="center" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" /></p>
