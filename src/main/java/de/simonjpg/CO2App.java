@@ -5,7 +5,6 @@ import de.simonjpg.Backend.Extractor.ExtractCO2Data;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -84,7 +83,7 @@ public class CO2App {
             "  \\/_____/   \\/_/   \\/_/  \\/_/   \\/_____/   \\/_/ \\/_/ \\/_____/   \\/_/     \\/_____/ \n" +
             "                                                                                   ";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(banner5);
         LOGGER.info("Starting Application CO2 App");
         Backend backend = Backend.instance();
