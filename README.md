@@ -72,9 +72,63 @@ Um die Konfiguration zu überprüfen kann folgender Befehl ausgeführt werden:
 
 Wenn die erwünschten Berechtigungen erteilt wurden und auf der Konsole angezeigt werden, wurde der Benutzer korrekt konfiguriert.
 
-Nun kann sich über den eben angelegten Benutzer eingeloggt werden
+Nun kann sich über den eben angelegten Benutzer eingeloggt werden.
+
+## Leitfaden für die Installation unter Linux (Debian based)
+
+<p><img align="center" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" /></p>
+
+### Schritt 1:
+
+Unter auf Debian basierenden Distributionen werden mit folgenden Befehlen die benötigten Pakete heruntergeladen und installiert:
+
+`sudo apt-get update && sudo apt upgrade`
+
+`sudo apt-get install mysql-server mysql-client -y`
+
+Nach der Installation wird der mysql daemon gestartet. Dies kann mit folgenden Befehl überprüft werden:
+
+`systemctl status mysql`
+
+### Schritt 2:
+
+Um die Sicherheit zu erhöhen, sollte das Standardpasswort des root benutzers geändert werden. Zunächst verbindet man sich mit dem MySQL Server:
+
+`sudo mysql -u root -p`
+
+Es sollte ein starkes Password verwendet werden.
+
+`ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';`
+
+### Schritt 3:
+
+Ein neuer Benutzer kann wiefolgt angelegt werden:
+
+`CREATE USER 'java'@'localhost' IDENTIFIED BY 'MyNewPassword';`
+
+Nun werden eine neue Datenbank und Tabelle für die CO2 Daten angelegt.
+
+`CREATE DATABASE co2;`
+
+`USE co2;`
+
+`CREATE TABLE co2(id int(3) AUTO_INCREMENT, date DATE, value int(3), PRIMARY KEY (id));` 
+
+Anschließend werden dem Benutzer Berechtigungen für die Datenbank erteilt.
+
+`GRANT CREATE, INSERT, UPDATE, DELETE, SELECT ON co2.co2 TO 'java'@'localhost';`
+
+Um die Konfiguration zu überprüfen kann folgender Befehl ausgeführt werden:
+
+`SHOW GRANTS FOR 'java'@'localhost';`
+
+Wenn die erwünschten Berechtigungen erteilt wurden und auf der Konsole angezeigt werden, wurde der Benutzer korrekt konfiguriert.
+
+Nun kann sich über den eben angelegten Benutzer eingeloggt werden.
 
 <h2 align="left">Bekannte Fehler</h2>
+
+Aktuell sind keine Fehler bekannt.
 
 <h2 align="left">Technologies</h2>
 
@@ -92,4 +146,4 @@ source encoding : UTF-8
 
 <a href="https://mvnrepository.com/artifact/org.junit/junit5-engine">JUnit5</a>
 
-Apache Poi
+<a href="https://mvnrepository.com/artifact/org.apache.poi/poi/5.2.4">Apache Poi</a>
