@@ -5,7 +5,7 @@
 
 1. Projektbeschreibung
 
-Projekt für das Fach Projektmanagemant an der 
+Projekt für das Fach Projektmanagement an der 
 <a href="https://www.lgs-dieburg.de/">Landrat-Gruber-Schule</a>
 
 Im Rahmen des Unterrichts wurde diese Anwendung erstellt, um mit CO2 Daten ermitteln zu können, wie sich diese auf die Gesundheit auswirken.
