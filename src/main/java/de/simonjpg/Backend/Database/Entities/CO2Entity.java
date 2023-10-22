@@ -1,12 +1,17 @@
 package de.simonjpg.Backend.Database.Entities;
 
 public class CO2Entity {
-    private final int id;
+    private int id;
     private final int year;
     private final double value;
 
     public CO2Entity(int id, int year, double value) {
         this.id = id;
+        this.year = year;
+        this.value = value;
+    }
+
+    public CO2Entity(int year, double value) {
         this.year = year;
         this.value = value;
     }
