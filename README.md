@@ -112,11 +112,19 @@ Nun werden eine neue Datenbank und Tabelle für die CO2 Daten angelegt.
 
 `USE co2;`
 
-`CREATE TABLE co2(id int(3) AUTO_INCREMENT, date DATE, value int(3), PRIMARY KEY (id));` 
+`CREATE TABLE co2(id int NOT NULL AUTO_INCREMENT, year int, value double, PRIMARY KEY (id));` 
+
+`CREATE DATABASE test;`
+
+`USE test;`
+
+`CREATE TABLE co2(id int NOT NULL AUTO_INCREMENT, year int, value double, PRIMARY KEY (id));`
 
 Anschließend werden dem Benutzer Berechtigungen für die Datenbank erteilt.
 
 `GRANT CREATE, INSERT, UPDATE, DELETE, SELECT ON co2.co2 TO 'java'@'localhost';`
+
+`GRANT CREATE, INSERT, UPDATE, DELETE, SELECT ON test.co2 TO 'java'@'localhost';`
 
 Um die Konfiguration zu überprüfen kann folgender Befehl ausgeführt werden:
 
