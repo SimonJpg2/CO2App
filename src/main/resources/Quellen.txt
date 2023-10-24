@@ -16,3 +16,7 @@ Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a
 Log4J:      https://www.baeldung.com/java-logging-intro
 MySQL berechtigungen: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 Apache Poi: https://poi.apache.org/apidocs/index.html
+
+Frontend:
+
+https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
