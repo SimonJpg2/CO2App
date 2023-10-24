@@ -10,6 +10,8 @@ Website mit CO2 Daten: https://www.sonnblick.net/de/daten/zeitreihen/messung-co2
 
 Zweite Website mit Excel Datei: https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx
 
+Code Snippet für graphische Darstellung in einer CurveLineChart: https://github.com/DJ-Raven/java-curve-line-chart/tree/main
+
 Informationsquellen:
 
 Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a-html-document/

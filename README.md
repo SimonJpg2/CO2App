@@ -14,6 +14,8 @@ Die CO2 Daten werden aus dem Excel Dokument des
 <a href="https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx">Umweltbundesamtes</a>
 gewonnen.
 
+Shoutout an Ra Ven für seine CurveLineChart. Das verwendete repository ist <a href="https://github.com/DJ-Raven/java-curve-line-chart/tree/main">hier</a> zu finden.
+
 ## Inhaltsverzeichnis
 1. Projektbeschreibung
 2. Inhaltsverzeichnis
@@ -142,7 +144,9 @@ Nun kann sich über den eben angelegten Benutzer eingeloggt werden.
 
 <h2 align="left">Bekannte Fehler</h2>
 
-Aktuell sind keine Fehler bekannt.
+Bei der Anwahl der einzelnen MenuItems kommt es kurz zu einem Flackern des Bildes.
+
+Lösung des bugs unbekannt.
 
 <h2 align="left">Technologies</h2>
 
@@ -161,3 +165,7 @@ source encoding : UTF-8
 <a href="https://mvnrepository.com/artifact/org.junit/junit5-engine">JUnit5</a>
 
 <a href="https://mvnrepository.com/artifact/org.apache.poi/poi/5.2.4">Apache Poi</a>
+
+Jar: miglayout-4.0.jar
+
+Jar: TimingFramework-0.55.jar
