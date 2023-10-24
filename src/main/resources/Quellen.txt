@@ -20,3 +20,10 @@ Apache Poi: https://poi.apache.org/apidocs/index.html
 Frontend:
 
 https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
+https://docs.oracle.com/javase/tutorial/uiswing/events/mouselistener.html
+
+images:
+2.png: https://webstockreview.net/images/clipart-arrow-graph-1.png
+1.png: https://icons.iconarchive.com/icons/iconsmind/outline/512/Dashboard-icon.png
+logo.png: https://static.vecteezy.com/system/resources/previews/000/568/503/original/vector-co2-icon.jpg
+6.png: https://cdn4.iconfinder.com/data/icons/community-flat-colorful/2048/6764_-_Good_Health-512.png
