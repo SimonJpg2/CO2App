@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+// TODO: Add javadoc and logging
 public class CO2Service {
     private static CO2Service co2Service;
     private final Connection connection;
