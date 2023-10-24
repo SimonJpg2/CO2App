@@ -1,5 +1,5 @@
 package de.simonjpg.Backend.Database.Entities;
-
+// TODO: Add javadoc
 public class CO2Entity {
     private int id;
     private final int year;
