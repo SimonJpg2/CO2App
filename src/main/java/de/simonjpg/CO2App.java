@@ -98,7 +98,7 @@ public class CO2App {
             List<String> co2data = data.get(i);
             co2data.forEach(System.out::println);
         }
-
+        //TODO: Insert extracted data into database
         List<Double> extractedData = new ExtractCO2Data().extractData("1990.0");
         extractedData.forEach(System.out::println);
     }
