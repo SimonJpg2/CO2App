@@ -1,5 +1,6 @@
 package de.simonjpg.Frontend.UI.Swing;
 
+import de.simonjpg.Frontend.UI.Event.EventMenuSelected;
 import de.simonjpg.Frontend.UI.Model.Model_Menu;
 
 import java.awt.*;
@@ -13,9 +14,9 @@ import javax.swing.SwingUtilities;
 
 // TODO: Add Javadoc
 public class ListMenu<E extends Object> extends JList<E> {
-
     private final DefaultListModel model;
     private int selectedIndex = -1;
+    private EventMenuSelected event;
 
     public ListMenu() {
         model = new DefaultListModel();
@@ -30,6 +31,9 @@ public class ListMenu<E extends Object> extends JList<E> {
                         Model_Menu menu = (Model_Menu) o;
                         if (menu.getType() == Model_Menu.MenuType.MENU) {
                             selectedIndex = index;
+                            if (event != null) {
+                                event.selected(index);
+                            }
                         }
                     } else {
                         selectedIndex = index;
@@ -38,6 +42,10 @@ public class ListMenu<E extends Object> extends JList<E> {
             }
         });
 
+    }
+
+    public void addEventMenuSelected(EventMenuSelected event) {
+        this.event = event;
     }
 
     @Override

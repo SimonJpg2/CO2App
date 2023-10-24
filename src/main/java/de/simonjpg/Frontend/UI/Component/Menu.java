@@ -1,5 +1,6 @@
 package de.simonjpg.Frontend.UI.Component;
 
+import de.simonjpg.Frontend.UI.Event.EventMenuSelected;
 import de.simonjpg.Frontend.UI.Model.Model_Menu;
 import de.simonjpg.Frontend.UI.Swing.ListMenu;
 
@@ -26,12 +27,18 @@ public class Menu extends JPanel {
     private JLabel jLabel1;
     private ListMenu<String> listMenu1;
     private JPanel panelMoving;
+    private EventMenuSelected event;
 
     public Menu() {
         initComponents();
         setOpaque(false);
         listMenu1.setOpaque(false);
         init();
+    }
+
+    public void addEventMenuSelected(EventMenuSelected event) {
+        this.event = event;
+        listMenu1.addEventMenuSelected(event);
     }
 
     private void init() {
