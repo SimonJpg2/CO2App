@@ -2,6 +2,7 @@ package de.simonjpg;
 
 import de.simonjpg.Backend.Backend;
 import de.simonjpg.Backend.Extractor.ExtractCO2Data;
+import de.simonjpg.Frontend.Frontend;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -86,7 +87,11 @@ public class CO2App {
     public static void main(String[] args) {
         System.out.println(banner5);
         LOGGER.info("Starting Application CO2 App");
+
         Backend backend = Backend.instance();
+        Frontend frontend = Frontend.instance();
+        frontend.start();
+
         Map<Integer, List<String>> data = backend.getCrawler().getCO2Data();
 
         for (int i = 0; i < data.size(); i++) {
