@@ -1,6 +1,6 @@
 package de.simonjpg.Frontend.UI.Swing;
 
-import de.simonjpg.Frontend.UI.Model.Model_Menu;
+import de.simonjpg.Frontend.UI.Model.ModelMenu;
 
 import javax.swing.GroupLayout;
 import javax.swing.JLabel;
@@ -22,13 +22,13 @@ public class MenuItem extends JPanel {
 
     private boolean selected;
 
-    public MenuItem(Model_Menu data) {
+    public MenuItem(ModelMenu data) {
         initComponents();
         setOpaque(false);
-        if (data.getType() == Model_Menu.MenuType.MENU) {
+        if (data.getType() == ModelMenu.MenuType.MENU) {
             lbIcon.setIcon(data.toIcon());
             lbName.setText(data.getName());
-        } else if (data.getType() == Model_Menu.MenuType.TITLE) {
+        } else if (data.getType() == ModelMenu.MenuType.TITLE) {
             lbIcon.setText(data.getName());
             lbIcon.setFont(new Font("sansserif", 1, 12));
             lbName.setVisible(false);

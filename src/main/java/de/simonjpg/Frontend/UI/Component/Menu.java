@@ -1,8 +1,10 @@
 package de.simonjpg.Frontend.UI.Component;
 
 import de.simonjpg.Frontend.UI.Event.EventMenuSelected;
-import de.simonjpg.Frontend.UI.Model.Model_Menu;
+import de.simonjpg.Frontend.UI.Model.ModelMenu;
 import de.simonjpg.Frontend.UI.Swing.ListMenu;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,6 +23,7 @@ import javax.swing.JPanel;
 
 import static javax.swing.GroupLayout.*;
 import static javax.swing.GroupLayout.Alignment.LEADING;
+import static javax.swing.GroupLayout.Alignment.TRAILING;
 
 // TODO: Add Javadoc
 public class Menu extends JPanel {
@@ -28,6 +31,7 @@ public class Menu extends JPanel {
     private ListMenu<String> listMenu1;
     private JPanel panelMoving;
     private EventMenuSelected event;
+    private static final Logger LOGGER = LogManager.getLogger(Menu.class);
 
     public Menu() {
         initComponents();
@@ -42,22 +46,23 @@ public class Menu extends JPanel {
     }
 
     private void init() {
-        listMenu1.addItem(new Model_Menu("1", "Dashboard", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "1990", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "1995", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2000", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2005", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2010", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2015", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2020", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("2", "2022", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("", " ", Model_Menu.MenuType.EMPTY));
+        LOGGER.info("Add MenuItem to Chart");
+        listMenu1.addItem(new ModelMenu("1", "Dashboard", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "1990", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "1995", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2000", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2005", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2010", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2015", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2020", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "2022", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("", " ", ModelMenu.MenuType.EMPTY));
 
-        listMenu1.addItem(new Model_Menu("", "Optionen", Model_Menu.MenuType.TITLE));
-        listMenu1.addItem(new Model_Menu("", " ", Model_Menu.MenuType.EMPTY));
-        listMenu1.addItem(new Model_Menu("6", "Gesundheit", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("10", "Beenden", Model_Menu.MenuType.MENU));
-        listMenu1.addItem(new Model_Menu("", "", Model_Menu.MenuType.EMPTY));
+        listMenu1.addItem(new ModelMenu("", "Optionen", ModelMenu.MenuType.TITLE));
+        listMenu1.addItem(new ModelMenu("", " ", ModelMenu.MenuType.EMPTY));
+        listMenu1.addItem(new ModelMenu("6", "Gesundheit", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("10", "Beenden", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("", "", ModelMenu.MenuType.EMPTY));
     }
 
     private void initComponents() {
@@ -83,7 +88,7 @@ public class Menu extends JPanel {
         );
         panelMovingLayout.setVerticalGroup(
                 panelMovingLayout.createParallelGroup(LEADING)
-                        .addGroup(Alignment.TRAILING, panelMovingLayout.createSequentialGroup()
+                        .addGroup(TRAILING, panelMovingLayout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel1)
                                 .addContainerGap())

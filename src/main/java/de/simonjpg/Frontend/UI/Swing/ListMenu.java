@@ -1,7 +1,7 @@
 package de.simonjpg.Frontend.UI.Swing;
 
 import de.simonjpg.Frontend.UI.Event.EventMenuSelected;
-import de.simonjpg.Frontend.UI.Model.Model_Menu;
+import de.simonjpg.Frontend.UI.Model.ModelMenu;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -27,9 +27,9 @@ public class ListMenu<E extends Object> extends JList<E> {
                 if (SwingUtilities.isLeftMouseButton(me)) {
                     int index = locationToIndex(me.getPoint());
                     Object o = model.getElementAt(index);
-                    if (o instanceof Model_Menu) {
-                        Model_Menu menu = (Model_Menu) o;
-                        if (menu.getType() == Model_Menu.MenuType.MENU) {
+                    if (o instanceof ModelMenu) {
+                        ModelMenu menu = (ModelMenu) o;
+                        if (menu.getType() == ModelMenu.MenuType.MENU) {
                             selectedIndex = index;
                             if (event != null) {
                                 event.selected(index);
@@ -53,11 +53,11 @@ public class ListMenu<E extends Object> extends JList<E> {
         return new DefaultListCellRenderer() {
             @Override
             public Component getListCellRendererComponent(JList<?> jlist, Object o, int index, boolean selected, boolean focus) {
-                Model_Menu data;
-                if (o instanceof Model_Menu) {
-                    data = (Model_Menu) o;
+                ModelMenu data;
+                if (o instanceof ModelMenu) {
+                    data = (ModelMenu) o;
                 } else {
-                    data = new Model_Menu("", o + "", Model_Menu.MenuType.EMPTY);
+                    data = new ModelMenu("", o + "", ModelMenu.MenuType.EMPTY);
                 }
                 MenuItem item = new MenuItem(data);
                 item.setSelected(selectedIndex == index);
@@ -67,7 +67,7 @@ public class ListMenu<E extends Object> extends JList<E> {
         };
     }
 
-    public void addItem(Model_Menu data) {
+    public void addItem(ModelMenu data) {
         model.addElement(data);
     }
 }
