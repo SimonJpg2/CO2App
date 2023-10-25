@@ -6,11 +6,11 @@ Maven Dependencies:
 4. Log4J Core           : https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.20.0
 5. apache poi           : https://mvnrepository.com/artifact/org.apache.poi/poi/5.2.4
 
-Website mit CO2 Daten: https://www.sonnblick.net/de/daten/zeitreihen/messung-co2/
+Website mit CO₂ Daten: https://www.sonnblick.net/de/daten/zeitreihen/messung-co2/
 
 Zweite Website mit Excel Datei: https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx
 
-Code Snippet für graphische Darstellung in einer CurveLineChart: https://github.com/DJ-Raven/java-curve-line-chart/tree/main
+Code Snippet für grafische Darstellung in einer CurveLineChart: https://github.com/DJ-Raven/java-curve-line-chart/tree/main
 
 Informationsquellen:
 
