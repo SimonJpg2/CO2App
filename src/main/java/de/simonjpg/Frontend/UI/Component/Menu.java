@@ -56,6 +56,7 @@ public class Menu extends JPanel {
         listMenu1.addItem(new ModelMenu("2", "2015", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("2", "2020", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("2", "2022", ModelMenu.MenuType.MENU));
+        listMenu1.addItem(new ModelMenu("2", "Infos", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("", " ", ModelMenu.MenuType.EMPTY));
 
         listMenu1.addItem(new ModelMenu("", "Optionen", ModelMenu.MenuType.TITLE));
