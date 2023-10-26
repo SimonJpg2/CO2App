@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class CO2App {
     private static final Logger LOGGER = LogManager.getLogger(CO2App.class);
+    @SuppressWarnings("unused")
     private static final String banner1 = "    ____________                                      \n" +
             "   /   ______   \\                                    \n" +
             "  /   /      \\___\\                                  \n" +
@@ -32,6 +33,7 @@ public class CO2App {
             "                                                       |________/   |__|        |________/ \n" +
             "                                                                                ";
 
+    @SuppressWarnings("unused")
     private static final String banner2 = " " +
             "  _____ _                            _             \n" +
             "  / ____(_)                          | |            \n" +
@@ -42,6 +44,7 @@ public class CO2App {
             "                                       | |     __/ |\n" +
             "                                       |_|    |___/ ";
 
+    @SuppressWarnings("unused")
     private static final String banner3 = " ________  ___  _____ ______   ________  ________         ___  ________  ________     \n" +
             "|\\   ____\\|\\  \\|\\   _ \\  _   \\|\\   __  \\|\\   ___  \\      |\\  \\|\\   __  \\|\\   ____\\    \n" +
             "\\ \\  \\___|\\ \\  \\ \\  \\\\\\__\\ \\  \\ \\  \\|\\  \\ \\  \\\\ \\  \\     \\ \\  \\ \\  \\|\\  \\ \\  \\___|    \n" +
@@ -53,6 +56,7 @@ public class CO2App {
             "                                                                                      \n" +
             "                                                                                      ";
 
+    @SuppressWarnings("unused")
     private static final String banner4 = "                                     \n" +
             " _____ _                  __         \n" +
             "|   __|_|_____ ___ ___ __|  |___ ___ \n" +
@@ -61,6 +65,7 @@ public class CO2App {
             "                            |_| |___|\n" +
             "\n";
 
+    @SuppressWarnings("unused")
     private static final String banner5 = "   _____                             __           \n" +
             "  / ___/(_)___ ___  ____  ____      / /___  ____ _\n" +
             "  \\__ \\/ / __ `__ \\/ __ \\/ __ \\__  / / __ \\/ __ `/\n" +
@@ -69,6 +74,7 @@ public class CO2App {
             "                                  /_/    /____/   \n" +
             "\n";
 
+    @SuppressWarnings("unused")
     private static final String banner6 = "____________                        _________                \n" +
             "__  ___/__(_)______ ______________________  /______________ _\n" +
             "_____ \\__  /__  __ `__ \\  __ \\_  __ \\__ _  /___  __ \\_  __ `/\n" +
@@ -77,6 +83,7 @@ public class CO2App {
             "                                            /_/     /____/   \n" +
             "\n";
 
+    @SuppressWarnings("unused")
     private static final String banner7 = " ______     __     __    __     ______     __   __       __     ______   ______    \n" +
             "/\\  ___\\   /\\ \\   /\\ \"-./  \\   /\\  __ \\   /\\ \"-.\\ \\     /\\ \\   /\\  == \\ /\\  ___\\   \n" +
             "\\ \\___  \\  \\ \\ \\  \\ \\ \\-./\\ \\  \\ \\ \\/\\ \\  \\ \\ \\-.  \\   _\\_\\ \\  \\ \\  _-/ \\ \\ \\__ \\  \n" +
