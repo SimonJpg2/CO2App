@@ -3,7 +3,7 @@ package de.simonjpg.Frontend.UI.Form;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
-import java.awt.Color;
+import java.awt.*;
 
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.CurveLineChart;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.ModelChart;
@@ -56,8 +56,20 @@ public class FormDashboard extends JPanel {
     }
 
     private void initComponents() {
+        panelShadow1 = new PanelShadow() {
+            // Smooth rounded corners
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                RenderingHints qualityHints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                qualityHints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                g2.setRenderingHints(qualityHints);
+                g2.setPaint(new Color(46, 129, 159));
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 25, 25);
+                g2.dispose();
+            }
+        };
 
-        panelShadow1 = new PanelShadow();
         chart = new CurveLineChart();
 
         /*
@@ -99,4 +111,16 @@ public class FormDashboard extends JPanel {
                         .addComponent(panelShadow1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
         );
     }
+    // Smooth rounded corners
+    @Override
+    protected void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g.create();
+        RenderingHints qualityHints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        qualityHints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        g2.setRenderingHints(qualityHints);
+        g2.setPaint(new Color(46, 129, 159));
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 25, 25);
+        g2.dispose();
+    }
+
 }
