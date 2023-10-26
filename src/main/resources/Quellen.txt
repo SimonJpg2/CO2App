@@ -18,11 +18,13 @@ Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a
 Log4J:      https://www.baeldung.com/java-logging-intro
 MySQL berechtigungen: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 Apache Poi: https://poi.apache.org/apidocs/index.html
+Treibhauseffekt: https://www.quarks.de/umwelt/klimawandel/so-eine-grosse-wirkung-hat-so-wenig-co2/
 
 Frontend:
 
 https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
 https://docs.oracle.com/javase/tutorial/uiswing/events/mouselistener.html
+https://stackoverflow.com/questions/25031328/smooth-rounded-corners-in-swing
 
 images:
 2.png: https://webstockreview.net/images/clipart-arrow-graph-1.png
