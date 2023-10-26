@@ -5,17 +5,28 @@ import de.simonjpg.Frontend.UI.Swing.SearchText;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
+import static java.lang.Short.MAX_VALUE;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.GroupLayout.*;
+import static javax.swing.GroupLayout.Alignment.LEADING;
 import static javax.swing.LayoutStyle.ComponentPlacement.*;
 
-//TODO: Add Javadoc
-public class Header extends javax.swing.JPanel {
+/**
+ * Class Header.
+ *
+ * <p>
+ *     Contains Icons and the actual JTextField for the search bar.
+ * </p>
+ * @author SimonJpg
+ * @see javax.swing.JPanel
+ */
+public class Header extends JPanel {
     private JLabel jLabel1;
     private JLabel jLabel2;
     private SearchText searchText1;
@@ -25,6 +36,13 @@ public class Header extends javax.swing.JPanel {
         setOpaque(false);
     }
 
+    /**
+     * Method initComponents.
+     * <p>
+     *     Initialize components for the JPanel
+     * </p>
+     */
+    @SuppressWarnings("DataFlowIssue")
     private void initComponents() {
         jLabel1 = new JLabel();
         searchText1 = new SearchText();
@@ -40,21 +58,21 @@ public class Header extends javax.swing.JPanel {
         GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(Alignment.LEADING)
+                layout.createParallelGroup(LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(RELATED)
-                                .addComponent(searchText1, DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                                .addComponent(searchText1, DEFAULT_SIZE, 606, MAX_VALUE)
                                 .addPreferredGap(RELATED)
                                 .addComponent(jLabel2)
                                 .addContainerGap())
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(Alignment.LEADING)
-                        .addComponent(jLabel1, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(searchText1, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                layout.createParallelGroup(LEADING)
+                        .addComponent(jLabel1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
+                        .addComponent(searchText1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
+                        .addComponent(jLabel2, DEFAULT_SIZE, 45, MAX_VALUE)
         );
     }
 
