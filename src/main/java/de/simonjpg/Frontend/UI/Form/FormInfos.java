@@ -1,29 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package de.simonjpg.Frontend.UI.Form;
 
-import javax.swing.GroupLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.util.Objects;
 
 import static java.lang.Short.MAX_VALUE;
 import static javax.swing.BorderFactory.createEmptyBorder;
 import static javax.swing.GroupLayout.Alignment.LEADING;
+import static javax.swing.GroupLayout.Alignment.TRAILING;
 import static javax.swing.GroupLayout.DEFAULT_SIZE;
 import static javax.swing.GroupLayout.PREFERRED_SIZE;
-import static javax.swing.LayoutStyle.*;
+import static javax.swing.LayoutStyle.ComponentPlacement.RELATED;
+import static javax.swing.LayoutStyle.ComponentPlacement.UNRELATED;
 
 /**
+ * Class FormInfos.
  *
- * @author simon
+ * <p>
+ *     This class has been created with Netbeans IDE.
+ * </p>
+ *
+ * @author SimonJpg
+ * @see javax.swing.JPanel
  */
 public class FormInfos extends JPanel {
     private JLabel CO2Label1;
@@ -97,12 +99,13 @@ public class FormInfos extends JPanel {
         };
 
         labelIcon1 = new JLabel();
-        //TODO: Icon hinzufügen
+        labelIcon1.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/icon/co2-icon.png"))));
+
         CO2Label1 = new JLabel();
         jLabel2 = new JLabel();
 
         jPanel2 = new JPanel() {
-            // round corners
+            // smooth rounded corners
             @Override
             protected void paintComponent(Graphics g) {
                 Graphics2D g2 = (Graphics2D) g.create();
@@ -116,7 +119,8 @@ public class FormInfos extends JPanel {
         };
 
         labelIcon2 = new JLabel();
-        //TODO: Icon hinzufügen
+        labelIcon2.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/icon/co2-icon.png"))));
+
         CO2Label2 = new JLabel();
         jLabel1 = new JLabel();
 
@@ -158,7 +162,7 @@ public class FormInfos extends JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(CO2Label1, PREFERRED_SIZE, 26, PREFERRED_SIZE)
-                        .addPreferredGap(ComponentPlacement.UNRELATED)
+                        .addPreferredGap(UNRELATED)
                         .addComponent(jLabel2, DEFAULT_SIZE, 24, MAX_VALUE)
                         .addGap(9, 9, 9))
                     .addComponent(labelIcon1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE))
@@ -180,11 +184,11 @@ public class FormInfos extends JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelIcon2, PREFERRED_SIZE, 71, PREFERRED_SIZE)
-                .addGap(62, 62, 62)
+                .addGap(84, 84, 84)
                 .addGroup(jPanel2Layout.createParallelGroup(LEADING, false)
-                    .addComponent(CO2Label2, DEFAULT_SIZE, 108, MAX_VALUE)
+                    .addComponent(CO2Label2, DEFAULT_SIZE, 105, MAX_VALUE)
                     .addComponent(jLabel1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE))
-                .addContainerGap(143, MAX_VALUE))
+                .addContainerGap(124, MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(LEADING)
@@ -194,9 +198,9 @@ public class FormInfos extends JPanel {
                     .addComponent(labelIcon2, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(CO2Label2, PREFERRED_SIZE, 26, PREFERRED_SIZE)
-                        .addPreferredGap(ComponentPlacement.UNRELATED)
+                        .addPreferredGap(UNRELATED)
                         .addComponent(jLabel1, DEFAULT_SIZE, 24, MAX_VALUE)
-                        .addGap(15, 15, 15))))
+                        .addGap(9, 9, 9))))
         );
 
         GroupLayout layout = new GroupLayout(this);
@@ -207,16 +211,16 @@ public class FormInfos extends JPanel {
                 .addContainerGap(20, MAX_VALUE)
                 .addComponent(jScrollPane1, PREFERRED_SIZE, 895, PREFERRED_SIZE)
                 .addContainerGap(15, MAX_VALUE))
-            .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(TRAILING, layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jPanel1, PREFERRED_SIZE, DEFAULT_SIZE, PREFERRED_SIZE)
-                .addPreferredGap(ComponentPlacement.RELATED, DEFAULT_SIZE, MAX_VALUE)
+                .addPreferredGap(RELATED, DEFAULT_SIZE, MAX_VALUE)
                 .addComponent(jPanel2, PREFERRED_SIZE, DEFAULT_SIZE, PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(LEADING)
-            .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(TRAILING, layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(LEADING)
                     .addComponent(jPanel1, PREFERRED_SIZE, DEFAULT_SIZE, PREFERRED_SIZE)
