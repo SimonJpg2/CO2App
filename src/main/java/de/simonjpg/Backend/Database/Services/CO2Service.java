@@ -34,9 +34,9 @@ public class CO2Service {
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM co2");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int idOfRs = resultSet.getInt(0);
-                int yearOfRs = resultSet.getInt(1);
-                double valueOfRs = resultSet.getDouble(2);
+                int idOfRs = resultSet.getInt(1);
+                int yearOfRs = resultSet.getInt(2);
+                double valueOfRs = resultSet.getDouble(3);
                 entities.add(new CO2Entity(idOfRs, yearOfRs, valueOfRs));
             }
             resultSet.close();
