@@ -14,6 +14,10 @@ Die CO2 Daten werden aus dem Excel Dokument des
 <a href="https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx">Umweltbundesamtes</a>
 gewonnen.
 
+Bei Programmstart erscheint eine Übersicht über die gesamten CO² Daten aus dem Dokument:
+
+<p><img align="center" src="https://github.com/SimonJpg2/CO2App/blob/main/src/main/resources/Dashboard.png" /></p>
+
 Shoutout an Ra Ven für seine CurveLineChart. Das verwendete repository ist <a href="https://github.com/DJ-Raven/java-curve-line-chart/tree/main">hier</a> zu finden.
 
 ## Inhaltsverzeichnis
