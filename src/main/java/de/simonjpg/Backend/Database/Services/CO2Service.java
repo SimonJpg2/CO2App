@@ -28,6 +28,8 @@ public class CO2Service {
         return co2Service;
     }
 
+    //TODO: Add custom select statement for each year (1990, 1995, ...)
+
     public List<CO2Entity> select() throws SelectStatementFailedException {
         List<CO2Entity> entities = new ArrayList<>();
         try {
