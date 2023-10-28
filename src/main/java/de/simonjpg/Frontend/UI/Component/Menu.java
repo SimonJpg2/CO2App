@@ -15,12 +15,15 @@ import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.Objects;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import static java.awt.Font.BOLD;
+import static java.lang.Short.MAX_VALUE;
 import static javax.swing.GroupLayout.*;
 import static javax.swing.GroupLayout.Alignment.LEADING;
 import static javax.swing.GroupLayout.Alignment.TRAILING;
@@ -73,9 +76,9 @@ public class Menu extends JPanel {
 
         panelMoving.setOpaque(false);
 
-        jLabel1.setFont(new Font("sansserif", 1, 18)); // NOI18N
+        jLabel1.setFont(new Font("sansserif", BOLD, 18));
         jLabel1.setForeground(new Color(255, 255, 255));
-        jLabel1.setIcon(new ImageIcon(getClass().getResource("/icon/logo.png"))); // NOI18N
+        jLabel1.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/icon/co2-icon.png"))));
         jLabel1.setText("CO2 App");
 
         GroupLayout panelMovingLayout = new GroupLayout(panelMoving);
@@ -84,7 +87,7 @@ public class Menu extends JPanel {
                 panelMovingLayout.createParallelGroup(LEADING)
                         .addGroup(panelMovingLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel1, DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                                .addComponent(jLabel1, DEFAULT_SIZE, 203, MAX_VALUE)
                                 .addContainerGap())
         );
         panelMovingLayout.setVerticalGroup(
@@ -99,15 +102,15 @@ public class Menu extends JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(LEADING)
-                        .addComponent(panelMoving, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(listMenu1, DEFAULT_SIZE, DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelMoving, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
+                        .addComponent(listMenu1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(panelMoving, PREFERRED_SIZE, DEFAULT_SIZE, PREFERRED_SIZE)
                                 .addGap(15, 15, 15)
-                                .addComponent(listMenu1, DEFAULT_SIZE, 414, Short.MAX_VALUE))
+                                .addComponent(listMenu1, DEFAULT_SIZE, 414, MAX_VALUE))
         );
     }
 
