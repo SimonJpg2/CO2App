@@ -1,6 +1,10 @@
 package de.simonjpg;
 
 import de.simonjpg.Backend.Backend;
+import de.simonjpg.Backend.Database.Entities.CO2Entity;
+import de.simonjpg.Backend.Database.Services.CO2Service;
+import de.simonjpg.Backend.Exceptions.InsertStatementFailedException;
+import de.simonjpg.Backend.Exceptions.SelectStatementFailedException;
 import de.simonjpg.Backend.Extractor.ExtractCO2Data;
 import de.simonjpg.Frontend.Frontend;
 import org.apache.logging.log4j.LogManager;
@@ -95,18 +99,36 @@ public class CO2App {
         System.out.println(banner5);
         LOGGER.info("Starting Application CO2 App");
 
+        // Init backend and frontend
         Backend backend = Backend.instance();
         Frontend frontend = Frontend.instance();
         frontend.start();
 
-        Map<Integer, List<String>> data = backend.getCrawler().getCO2Data();
-
-        for (int i = 0; i < data.size(); i++) {
-            List<String> co2data = data.get(i);
-            co2data.forEach(System.out::println);
-        }
-        //TODO: Insert extracted data into database
+        // Insert Co² data of excel sheet into database.
+        //TODO: Insert extracted data into database and create JUnit5 tests
+        CO2Service service = CO2Service.instance(backend.getConnection());
         List<Double> extractedData = new ExtractCO2Data().extractData("1990.0");
+
+        try {
+            if (service.select().isEmpty()) {
+                insert(1990, extractedData, service);
+            } else {
+                LOGGER.info("Skipping insertion, data already in database.");
+            }
+        } catch (SelectStatementFailedException e) {
+            LOGGER.error("Selection from database failed.\n{}", e.getMessage());
+        }
         extractedData.forEach(System.out::println);
+    }
+
+    private static void insert(int year, List<Double> data, CO2Service service) {
+        try {
+            for (Double value : data) {
+                service.create(new CO2Entity(year, value));
+                LOGGER.info("Inserted CO2 data of year {} successfully.", year);
+            }
+        } catch (InsertStatementFailedException e) {
+            LOGGER.error("Insertion to database failed.\n{}", e.getMessage());
+        }
     }
 }
