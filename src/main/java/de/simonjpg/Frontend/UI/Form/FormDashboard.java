@@ -1,10 +1,14 @@
 package de.simonjpg.Frontend.UI.Form;
 
 import javax.swing.*;
-import javax.swing.GroupLayout.Alignment;
 
 import java.awt.*;
+import java.util.List;
 
+import de.simonjpg.Backend.Backend;
+import de.simonjpg.Backend.Database.Entities.CO2Entity;
+import de.simonjpg.Backend.Database.Services.CO2Service;
+import de.simonjpg.Backend.Exceptions.SelectStatementFailedException;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.CurveLineChart;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.ModelChart;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.panel.PanelShadow;
@@ -40,13 +44,17 @@ public class FormDashboard extends JPanel {
 
     private void setData() {
         //TODO: Add loop as shown in video.
-        chart.addData(new ModelChart("1990", new double[]{42.1241471898}));
-        chart.addData(new ModelChart("1990", new double[]{43.1241471898}));
-        chart.addData(new ModelChart("1990", new double[]{25.1241471898}));
-        chart.addData(new ModelChart("1990", new double[]{15.1241471898}));
-        chart.addData(new ModelChart("1995", new double[]{32.1241471898}));
-        chart.addData(new ModelChart("1995", new double[]{25.1241471898}));
-        chart.addData(new ModelChart("1995", new double[]{10.1241471898}));
+        Backend backend = Backend.instance();
+        CO2Service service = CO2Service.instance(backend.getConnection());
+
+        try {
+            List<CO2Entity> entities = service.select();
+            for (CO2Entity entity : entities) {
+                chart.addData(new ModelChart("", new double[]{entity.getValue()}));
+            }
+        } catch (SelectStatementFailedException e) {
+            //TODO: Add logging
+        }
 
         // startet Animation bei Mouseover
         chart.start();
