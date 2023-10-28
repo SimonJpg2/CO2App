@@ -105,28 +105,52 @@ public class CO2App {
         frontend.start();
 
         // Insert Co² data of excel sheet into database.
-        //TODO: Insert extracted data into database and create JUnit5 tests
+        //TODO: Create JUnit5 tests
         CO2Service service = CO2Service.instance(backend.getConnection());
-        List<Double> extractedData = new ExtractCO2Data().extractData("1990.0");
+        ExtractCO2Data extractCO2Data = new ExtractCO2Data();
+
+        List<Double> extractedData1990 = extractCO2Data.extractData("1990.0");
+        List<Double> extractedData1995 = extractCO2Data.extractData("1995.0");
+        List<Double> extractedData2000 = extractCO2Data.extractData("2000.0");
+        List<Double> extractedData2005 = extractCO2Data.extractData("2005.0");
+        List<Double> extractedData2010 = extractCO2Data.extractData("2010.0");
+        List<Double> extractedData2015 = extractCO2Data.extractData("2015.0");
+        List<Double> extractedData2020 = extractCO2Data.extractDataOf2020();
+        List<Double> extractedData2022 = extractCO2Data.extractDataOf2022();
 
         try {
             if (service.select().isEmpty()) {
-                insert(1990, extractedData, service);
+                insert(1990, extractedData1990, service);
+                insert(1995, extractedData1995, service);
+                insert(2000, extractedData2000, service);
+                insert(2005, extractedData2005, service);
+                insert(2010, extractedData2010, service);
+                insert(2015, extractedData2015, service);
+                insert(2020, extractedData2020, service);
+                insert(2022, extractedData2022, service);
             } else {
                 LOGGER.info("Skipping insertion, data already in database.");
             }
         } catch (SelectStatementFailedException e) {
             LOGGER.error("Selection from database failed.\n{}", e.getMessage());
         }
-        extractedData.forEach(System.out::println);
     }
 
+    /**
+     * Method insert.
+     * <p>
+     *     Method to insert CO² data to database.
+     * </p>
+     * @param year year of the represented data.
+     * @param data the actual data.
+     * @param service the service which handles the SQL statements.
+     */
     private static void insert(int year, List<Double> data, CO2Service service) {
         try {
             for (Double value : data) {
                 service.create(new CO2Entity(year, value));
-                LOGGER.info("Inserted CO2 data of year {} successfully.", year);
             }
+            LOGGER.info("Inserted CO2 data of year {} successfully", year);
         } catch (InsertStatementFailedException e) {
             LOGGER.error("Insertion to database failed.\n{}", e.getMessage());
         }
