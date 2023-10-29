@@ -60,7 +60,7 @@ public class FormDashboard extends JPanel {
         chart.start();
 
         // füllt Fläche unterhalb Funktion in derselben Farbe, wie die Funktion
-        chart.setFillColor(true);
+        // chart.setFillColor(true);
     }
 
     private void initComponents() {

@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
-import java.util.Map;
 
 public class CO2App {
     private static final Logger LOGGER = LogManager.getLogger(CO2App.class);
