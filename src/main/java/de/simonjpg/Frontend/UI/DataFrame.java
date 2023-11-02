@@ -33,6 +33,7 @@ public class DataFrame extends JFrame {
     private Menu menu1;
     private PanelBorder panelBorder1;
     private JPanel mainPanel;
+    private final Form1990 form1990;
     private final Form1995 form1995;
     private final FormDashboard formDashboard;
     private final FormGesundheit formGesundheit;
@@ -48,6 +49,7 @@ public class DataFrame extends JFrame {
 
         // Forms
         formDashboard = new FormDashboard();
+        form1990 = new Form1990();
         form1995 = new Form1995();
         formGesundheit = new FormGesundheit();
         formInfos = new FormInfos();
@@ -57,7 +59,8 @@ public class DataFrame extends JFrame {
             LOGGER.info("Selected index {}", index);
             switch (index) {
                 case 0: setForm(formDashboard); break;
-                case 1: setForm(form1995); break;
+                case 1: setForm(form1990); break;
+                case 2: setForm(form1995); break;
                 case 9: setForm(formInfos); break;
                 case 13: setForm(formGesundheit); break;
                 // TODO: Add other forms
