@@ -12,19 +12,25 @@ import de.simonjpg.Backend.Exceptions.SelectStatementFailedException;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.CurveLineChart;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.chart.ModelChart;
 import de.simonjpg.Frontend.UI.CurveLineChart.raven.panel.PanelShadow;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static java.lang.Short.MAX_VALUE;
 import static javax.swing.GroupLayout.Alignment.*;
 import static javax.swing.GroupLayout.DEFAULT_SIZE;
 
 /**
- *
- * @author SimonJpg
+ * Class FormDashboard.
+ * <p>
+ *     JPanel which contains the Curved Line Chart.
+ * </p>
+ * @author Simon Balcke
+ * @see javax.swing.JPanel
  */
-//TODO: Add Javadoc
 public class FormDashboard extends JPanel {
     private CurveLineChart chart;
     private PanelShadow panelShadow1;
+    private static final Logger LOGGER = LogManager.getLogger(FormDashboard.class);
 
     /** Creates new form NewJPanel */
     public FormDashboard() {
@@ -42,18 +48,24 @@ public class FormDashboard extends JPanel {
         setData();
     }
 
+    /**
+     * Method setData.
+     * <p>
+     *     Adds Co² data to chart
+     * </p>
+     */
     private void setData() {
-        //TODO: Add loop as shown in video.
         Backend backend = Backend.instance();
         CO2Service service = CO2Service.instance(backend.getConnection());
 
         try {
             List<CO2Entity> entities = service.select();
+            LOGGER.info("Adding Co2 data to chart");
             for (CO2Entity entity : entities) {
                 chart.addData(new ModelChart("", new double[]{entity.getValue()}));
             }
         } catch (SelectStatementFailedException e) {
-            //TODO: Add logging
+            LOGGER.error("Failed to add Co2 data to chart.\n{}", e.getMessage());
         }
 
         // startet Animation bei Mouseover
@@ -119,9 +131,9 @@ public class FormDashboard extends JPanel {
                         .addComponent(panelShadow1, DEFAULT_SIZE, DEFAULT_SIZE, MAX_VALUE)
         );
     }
-    // Smooth rounded corners
     @Override
     protected void paintComponent(Graphics g) {
+        // Smooth rounded corners
         Graphics2D g2 = (Graphics2D) g.create();
         RenderingHints qualityHints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         qualityHints.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
