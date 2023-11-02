@@ -27,8 +27,8 @@ import static javax.swing.GroupLayout.DEFAULT_SIZE;
  * @author Simon Balcke
  * @see javax.swing.JPanel
  */
-public class FormDashboard extends JPanel {
-    private CurveLineChart chart;
+public class FormDashboard extends JPanel implements FormMain {
+    protected CurveLineChart chart;
     private PanelShadow panelShadow1;
     private static final Logger LOGGER = LogManager.getLogger(FormDashboard.class);
 
@@ -54,7 +54,8 @@ public class FormDashboard extends JPanel {
      *     Adds Co² data to chart
      * </p>
      */
-    private void setData() {
+    @Override
+    public void setData() {
         Backend backend = Backend.instance();
         CO2Service service = CO2Service.instance(backend.getConnection());
 
