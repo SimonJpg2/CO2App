@@ -12,6 +12,15 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Class Co2App.
+ * <p>
+ *     This application has been created for my A Levels
+ *     More information is written down in the README.md file.
+ * </p>
+ * @author Simon Balcke
+ */
+
 public class CO2App {
     private static final Logger LOGGER = LogManager.getLogger(CO2App.class);
     @SuppressWarnings("unused")
@@ -104,7 +113,6 @@ public class CO2App {
         frontend.start();
 
         // Insert Co² data of excel sheet into database.
-        //TODO: Create JUnit5 tests
         CO2Service service = CO2Service.instance(backend.getConnection());
         ExtractCO2Data extractCO2Data = new ExtractCO2Data();
 
