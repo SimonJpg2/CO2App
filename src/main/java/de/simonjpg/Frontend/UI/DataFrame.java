@@ -1,5 +1,6 @@
 package de.simonjpg.Frontend.UI;
 
+import de.simonjpg.Backend.Database.Database;
 import de.simonjpg.Frontend.UI.Component.Header;
 import de.simonjpg.Frontend.UI.Component.Menu;
 import de.simonjpg.Frontend.UI.Form.*;
@@ -35,13 +36,19 @@ public class DataFrame extends JFrame {
     private JPanel mainPanel;
     private final Form1990 form1990;
     private final Form1995 form1995;
+    private final Form2000 form2000;
+    private final Form2005 form2005;
+    private final Form2010 form2010;
+    private final Form2015 form2015;
+    private final Form2020 form2020;
+    private final Form2022 form2022;
     private final FormDashboard formDashboard;
     private final FormGesundheit formGesundheit;
     private final FormInfos formInfos;
     private static final Logger LOGGER = LogManager.getLogger(DataFrame.class);
 
     /**
-     * Creates new form Main
+     * Creates new form DataFrame.
      */
     public DataFrame() {
         initComponents();
@@ -51,25 +58,47 @@ public class DataFrame extends JFrame {
         formDashboard = new FormDashboard();
         form1990 = new Form1990();
         form1995 = new Form1995();
+        form2000 = new Form2000();
+        form2005 = new Form2005();
+        form2010 = new Form2010();
+        form2015 = new Form2015();
+        form2020 = new Form2020();
+        form2022 = new Form2022();
         formGesundheit = new FormGesundheit();
         formInfos = new FormInfos();
 
         menu1.initMoving(DataFrame.this);
         menu1.addEventMenuSelected(index -> {
-            LOGGER.info("Selected index {}", index);
             switch (index) {
-                case 0: setForm(formDashboard); break;
-                case 1: setForm(form1990); break;
-                case 2: setForm(form1995); break;
-                case 9: setForm(formInfos); break;
-                case 13: setForm(formGesundheit); break;
-                // TODO: Add other forms
-                default: break;
+                case 0: setForm(formDashboard); LOGGER.info("Selected FormDashboard"); break;
+                case 1: setForm(form1990); LOGGER.info("Selected Form1990"); break;
+                case 2: setForm(form1995); LOGGER.info("Selected Form1995"); break;
+                case 3: setForm(form2000); LOGGER.info("Selected Form2000"); break;
+                case 4: setForm(form2005); LOGGER.info("Selected Form2005"); break;
+                case 5: setForm(form2010); LOGGER.info("Selected Form2010"); break;
+                case 6: setForm(form2015); LOGGER.info("Selected Form2015"); break;
+                case 7: setForm(form2020); LOGGER.info("Selected Form2020"); break;
+                case 8: setForm(form2022); LOGGER.info("Selected Form2022"); break;
+                case 9: setForm(formInfos); LOGGER.info("Selected FormInfos"); break;
+                case 13: setForm(formGesundheit); LOGGER.info("Selected FormGesundheit"); break;
+                case 14: LOGGER.info("Stopping tasks"); shutDown(); break;
+                default: LOGGER.warn("Unexpected JItem value"); break;
             }
         });
 
         // Default form which is displayed after startup.
         setForm(formDashboard);
+    }
+
+    /**
+     * Method shutDown.
+     * <p>
+     *     Initiates shutdown of application.
+     * </p>
+     */
+    private void shutDown() {
+        Database.instance().disconnect();
+        System.exit(0);
     }
 
     private void setForm(JComponent com) {
