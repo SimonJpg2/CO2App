@@ -15,12 +15,24 @@ import static java.lang.Short.MAX_VALUE;
 import static javax.swing.GroupLayout.Alignment.LEADING;
 import static javax.swing.GroupLayout.DEFAULT_SIZE;
 
-// TODO: Add Javadoc
+/**
+ * Class MenuItem.
+ * <p>
+ *     Item which can be selected to open another form.
+ * </p>
+ * @author Simon Balcke
+ * @see javax.swing.JPanel
+ */
 public class MenuItem extends JPanel {
     private JLabel lbIcon;
     private JLabel lbName;
 
     private boolean selected;
+
+    /**
+     * Create Form MenuItem.
+     * @param data of the item.
+     */
 
     public MenuItem(ModelMenu data) {
         initComponents();
@@ -39,11 +51,9 @@ public class MenuItem extends JPanel {
 
     public void setSelected(boolean selected) {
         this.selected = selected;
-        //repaint();
     }
 
     private void initComponents() {
-
         lbIcon = new JLabel();
         lbName = new JLabel();
 

@@ -12,11 +12,21 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import javax.swing.SwingUtilities;
 
-// TODO: Add Javadoc
+/**
+ * Class ListMenu.
+ * <p>
+ *    Actual List for switching between MenuItems.
+ * </p>
+ * @param <E>
+ */
 public class ListMenu<E extends Object> extends JList<E> {
     private final DefaultListModel model;
     private int selectedIndex = -1;
     private EventMenuSelected event;
+
+    /**
+     * Create Form ListMenu.
+     */
 
     public ListMenu() {
         model = new DefaultListModel();
@@ -44,6 +54,10 @@ public class ListMenu<E extends Object> extends JList<E> {
 
     }
 
+    /**
+     * Method addEventMenuSelected.
+     * @param event which is triggered if MenuItem has been switched.
+     */
     public void addEventMenuSelected(EventMenuSelected event) {
         this.event = event;
     }

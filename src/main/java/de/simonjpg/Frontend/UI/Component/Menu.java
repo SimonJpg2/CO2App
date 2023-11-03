@@ -28,7 +28,13 @@ import static javax.swing.GroupLayout.*;
 import static javax.swing.GroupLayout.Alignment.LEADING;
 import static javax.swing.GroupLayout.Alignment.TRAILING;
 
-// TODO: Add Javadoc
+/**
+ * Class Menu.
+ *
+ * <p>
+ *     Contains JList as a drop menu for switching between the charts.
+ * </p>
+ */
 public class Menu extends JPanel {
     private JLabel jLabel1;
     private ListMenu<String> listMenu1;
