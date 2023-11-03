@@ -32,7 +32,7 @@ public class FormDashboard extends JPanel implements FormMain {
     private PanelShadow panelShadow1;
     private static final Logger LOGGER = LogManager.getLogger(FormDashboard.class);
 
-    /** Creates new form NewJPanel */
+    /** Creates new form FormDashboard */
     public FormDashboard() {
         initComponents();
         chart.setTitle("CO2 Daten");

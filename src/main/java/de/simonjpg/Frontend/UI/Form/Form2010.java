@@ -11,21 +11,21 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 /**
- * Class Form1995.
+ * Class Form2010.
  * <p>
- *     JPanel which contains Curved Line Chart to display co2 data of 1995.
+ *     JPanel which contains Curved Line Chart to display co2 data of 2010.
  * </p>
  * @author Simon Balcke
  * @see de.simonjpg.Frontend.UI.Form.FormDashboard
  */
 
-public class Form1995 extends FormDashboard {
-    private static final Logger LOGGER = LogManager.getLogger(Form1995.class);
+public class Form2010 extends FormDashboard {
+    private static final Logger LOGGER = LogManager.getLogger(Form2010.class);
 
     /**
      * Method setData.
      * <p>
-     *     Fills Curved Line Chart with Co2 data of 1995.
+     *     Fills Curved Line Chart with Co2 data of 2010.
      * </p>
      */
     @Override
@@ -34,7 +34,7 @@ public class Form1995 extends FormDashboard {
         CO2Service service = CO2Service.instance(backend.getConnection());
 
         try {
-            List<CO2Entity> entities = service.selectYear(1995);
+            List<CO2Entity> entities = service.selectYear(2010);
             LOGGER.info("Adding Co2 data to chart");
             for (CO2Entity entity : entities) {
                 chart.addData(new ModelChart("", new double[]{entity.getValue()}));
