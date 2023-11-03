@@ -9,7 +9,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,9 +58,7 @@ public class XLSXCrawler {
         LOGGER.info("Capturing CO2 data");
         try {
             // Crawl the Excel file.
-            Workbook workbook = new XSSFWorkbook(WebCrawler.instance(
-                                new URL("https://www.umweltbundesamt.de/sites/default/files/medien/384/bilder/dateien/de-en_indikator_klim-01_emission-treibhausgase_2023-04-11_0.xlsx")
-                                ).crawlXlsxFile());
+            Workbook workbook = new XSSFWorkbook(WebCrawler.instance().crawlXlsxFile());
             // Get the sheet called "Daten".
             Sheet sheet = workbook.getSheetAt(workbook.getSheetIndex("Daten"));
             int i = 0;
