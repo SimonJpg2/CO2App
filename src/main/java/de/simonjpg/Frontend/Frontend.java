@@ -4,7 +4,14 @@ import de.simonjpg.Frontend.UI.DataFrame;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//TODO: Add Javadoc
+/**
+ * Class Frontend.
+ *
+ * <p>
+ *     Initializes the frontend.
+ * </p>
+ * @author Simon Balcke
+ */
 public class Frontend extends Thread {
     private static Frontend frontend;
     private static final Logger LOGGER = LogManager.getLogger(Frontend.class);
