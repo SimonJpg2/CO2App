@@ -10,17 +10,22 @@ import javax.swing.JComponent;
 import javax.swing.JScrollBar;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-// TODO: Add Javadoc
+/**
+ * Class ModernScrollBarUI.
+ * <p>
+ *     The scrollbar implementation for basic look and feel.
+ * </p>
+ * @author Simon Balcke
+ * @see javax.swing.plaf.basic.BasicScrollBarUI
+ */
 
 public class ModernScrollBarUI extends BasicScrollBarUI {
-
     private static final int SCROLL_BAR_ALPHA_ROLLOVER = 100;
     private static final int SCROLL_BAR_ALPHA = 50;
     private static final int THUMB_SIZE = 8;
     private static final Color THUMB_COLOR = Color.BLACK;
 
     public ModernScrollBarUI() {
-
     }
 
     @Override
@@ -56,8 +61,15 @@ public class ModernScrollBarUI extends BasicScrollBarUI {
         graphics2D.dispose();
     }
 
+    /**
+     * Class InvisibleScrollBarButton.
+     * <p>
+     *     Implementation of an invisible JButton.
+     * </p>
+     * @author Simon Balcke
+     * @see javax.swing.JButton
+     */
     private static class InvisibleScrollBarButton extends JButton {
-
         private InvisibleScrollBarButton() {
             setOpaque(false);
             setFocusable(false);

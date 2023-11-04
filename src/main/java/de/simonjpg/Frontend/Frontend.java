@@ -16,7 +16,6 @@ public class Frontend extends Thread {
     private static Frontend frontend;
     private static final Logger LOGGER = LogManager.getLogger(Frontend.class);
     public Frontend() {
-
     }
 
     @Override
