@@ -11,6 +11,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
+import static java.awt.Font.BOLD;
 import static java.lang.Short.MAX_VALUE;
 import static javax.swing.GroupLayout.Alignment.LEADING;
 import static javax.swing.GroupLayout.DEFAULT_SIZE;
@@ -42,7 +43,7 @@ public class MenuItem extends JPanel {
             lbName.setText(data.getName());
         } else if (data.getType() == ModelMenu.MenuType.TITLE) {
             lbIcon.setText(data.getName());
-            lbIcon.setFont(new Font("sansserif", 1, 12));
+            lbIcon.setFont(new Font("sansserif", BOLD, 12));
             lbName.setVisible(false);
         } else {
             lbName.setText(" ");
