@@ -18,8 +18,7 @@ Webcrawler: https://www.geeksforgeeks.org/java-program-to-extract-content-from-a
 Log4J:      https://www.baeldung.com/java-logging-intro
 MySQL berechtigungen: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 Apache Poi: https://poi.apache.org/apidocs/index.html
-Treibhauseffekt: https://www.quarks.de/umwelt/klimawandel/so-eine-grosse-wirkung-hat-so-wenig-co2/
-CO2 Informationen: https://www.welt.de/wams_print/article1351823/CO2-ist-fuer-Menschen-eigentlich-ungiftig-aber-doch-gefaehrlich.html
+CO2 Informationen: https://www.wissenschaft-im-dialog.de/projekte/wieso/artikel/beitrag/geht-uns-die-luft-zum-atmen-aus/
 
 Frontend:
 
