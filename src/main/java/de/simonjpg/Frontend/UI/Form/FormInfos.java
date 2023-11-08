@@ -38,26 +38,25 @@ public class FormInfos extends JPanel {
     private JTextArea jTextArea1;
     private JLabel labelIcon1;
     private JLabel labelIcon2;
-    private final String text = "Auch wenig CO2 reicht aus\n" +
-            "Um zu verstehen, warum CO2 und andere Treibhausgase für unseren Planeten eine wichtige Rolle spielen, kann man sich beispielsweise die Erde ganz ohne Atmosphäre vorstellen.\n" +
-            "\n" +
-            "Unser Mond zum Beispiel hat keine Atmosphäre. Die Sonnenstrahlung heizt die Oberfläche tagsüber auf mehr als 100 Grad Celsius auf, nachts fällt sie auf etwa minus 160 Grad. Ohne die Atmosphäre würde auch auf der Erde ein viel größerer Temperaturunterschied herrschen. Forschende haben berechnet, dass die Durchschnittstemperatur auf der Erde bei minus 18 Grad liegen würde. Tatsächlich liegt sie aber bei 15 Grad Celsius – also rund 33 Grad mehr.\n" +
-            "\n" +
-            "Dass die Temperaturen weder tags- noch nachtsüber so extrem sind, hängt mit unserer Atmosphäre zusammen, die auch als Schutzschild fungiert. Zuerst einmal verhindert unsere Atmosphäre, dass die gesamte Sonnenstrahlung auf die Erde trifft. Insgesamt gelangt weniger als die Hälfte der Sonnenstrahlung auf die Erdoberfläche. Wolken etwa reflektieren ein Viertel der Sonnenstrahlung direkt wieder ins All, die Schneemassen einen weiteren Teil.\n" +
-            "\n" +
-            "Die übrige Energie gelangt auf die Erdoberfläche, wird dort umgewandelt und in Form von Wärmestrahlung wieder Richtung Weltall geschickt. Wichtig hierbei ist: Was von der Erdoberfläche zurückstrahlt, ist eine andere Strahlung als jene, die aus Richtung der Sonne kommt. Die von der Erde ausgehende Wärmestrahlung kann jedoch zwischen Atmosphäre und Boden reflektiert und in einem gewissen Sinne von Treibhausgasen gefangen werden.\n" +
-            "\n" +
-            "Diese Gase (Wasserdampf, CO2, Methan und andere) verhindern also, dass die Wärmestrahlung sofort ins Weltall entweicht. Stattdessen wird sie teils erneut zurück zur Erde geschickt - und hierin liegt die Klimawirkung von CO2 und anderen: entscheidend ist die chemische Struktur der Gase in der Atmosphäre. Treibhausgase setzen sich aus drei oder mehr Atomen zusammen. Kohlenstoffdioxid beispielsweise aus einem Kohlenstoff und zwei Sauerstoffatomen.\n" +
-            "\n" +
-            "Diese Gasmoleküle sind – anders als Sauerstoff oder Stickstoff (zwei Atome) – empfänglich für bestimmte Strahlung. Entscheidend dafür ist deren Wellenlänge. Die Strahlungsenergie wird aufgenommen und versetzt die Moleküle in Bewegungen, konkret in Schwingungen. Bei der Bewegung wiederum wird Energie frei, die etwa als Wärmestrahlung in verschiedene Richtung – circa zur Hälfte auch in Richtung Erdoberfläche – abgegeben wird.\n" +
-            "Nur drei- oder mehratomige Moleküle wirken aufs Klima\n" +
-            "\n" +
-            "Stickstoff und Sauerstoff, die Hauptbestandteile der Atmosphäre, interagieren in höheren Atmosphärenschichten zwar ebenfalls mit Strahlung und führen beispielsweise zu den bekannten Polarlichtern. Mit Wärmestrahlung aus Richtung der Erdoberfläche reagieren sie aber nicht. Nur drei- oder mehratomige Moleküle, wie Kohlenstoffdioxid oder Methan, haben das Potenzial, den Planeten zu erwärmen. Für den Treibhauseffekt spielt der Großteil der Atmosphärengase daher keine Rolle.\n" +
-            "\n" +
-            "Den größten Effekt auf unsere stabile Temperatur hat der Wasserdampf (Wolken), der zwischen null und vier Volumenprozent ausmacht – an den Polen etwa weniger, in den Tropen mehr. Er trägt daher vor allem zum natürlichen Treibhauseffekt bei. Das Problem: Der Anteil von Wasserdampf in der Atmosphäre hängt von der Temperatur ab. Mehr CO2 führt zu steigenden Temperaturen, das führt zu mehr Wasserdampf und verstärkt den Treibhauseffekt - eine positive Rückkopplung, die große Auswirkungen haben kann.\n" +
-            "\n" +
-            "Aus diesem Grund führen höhere Konzentrationen der Treibhausgase, auch wenn sie nur wenige Volumenprozente der Atmosphäre ausmachen, zu sich selbst verstärkenden Effekten – sogenannten Feedback Loops. Daraus berechnen die Forscher eine um bis zu 4,5 Grad höhere Durchschnittstemperatur, wenn sich das CO2 in der Atmosphäre verdoppelt – auch wenn das \"nur\" weitere 0,028 Volumenprozent wären. Die Konzentration der Gase allein sagt nichts aus, denn einige wenige Moleküle an CO2 können eine große Wirkung haben, viele Stickstoffmoleküle dagegen für die globale Temperatur bedeutungslos bleiben.\n\n Kohlenstoffdioxid (CO2) wird als „Klimagift“ bezeichnet, weil es im übertragenen Sinne Gift für das Klima ist: Es absorbiert die Wärmeabstrahlung von der Erde und heizt so die Atmosphäre auf.\n Für den Menschen ist CO2 in geringer Konzentration nicht giftig, es behindert aber die Sauerstoffaufnahme. Eine erhöhte Konzentration von CO2 in der Umgebungsluft kann bei Menschen zu Kopfschmerzen führen und letztlich Bewusstlosigkeit auslösen.\n\n Eine Konzentration von acht Prozent oder mehr kann nach 30 bis 60 Minuten zum Tode führen.";
 
+    /*
+    *
+    * Textquelle: https://www.wissenschaft-im-dialog.de/projekte/wieso/artikel/beitrag/geht-uns-die-luft-zum-atmen-aus/
+    *
+    */
+    private final String text = "Geht uns die Luft zum Atmen aus?\n" +
+            "\n" +
+            "Zum Atmen benötigen wir Sauerstoff. An Kohlenstoffdioxid in Reinform würden wir ersticken. Durch die Verbrennung fossiler Brennstoffe verbrauchen wir immer mehr Sauerstoff und stoßen gleichzeitig immer mehr Kohlenstoffdioxid aus. Nur etwa die Hälfte der pro Jahr ausgestoßenen Menge an Kohlenstoffdioxid kann von unseren natürlichen Speichern wie Regenwäldern, Erdböden und Ozeanen aufgenommen werden, der Rest verbleibt in der Atmosphäre und reichert sich dort an.\n\n Geht uns also bald die Luft zu Atmen aus?\n" +
+            "\n" +
+            "Unsere Atemluft besteht zu 21 Prozent aus Sauerstoff und 78 Prozent aus Stickstoff, einem Element, das als Baustein in unserem Erbgut und in Proteinen essentiell für alle Lebewesen ist.\n\n Im Vergleich dazu macht Kohlenstoffdioxid nur einen Bruchteil der verbleibenden 1 Prozent in der Luft aus. Der Kohlenstoffdioxidgehalt in der Luft lag vor der Nutzung fossiler Brennstoffe bei 280 ppm (parts per million) und ist auf aktuell 400 ppm angestiegen.\n\n Gleichzeitig ist die Sauerstoffkonzentration gesunken: jeweils um das Anderthalbfache der entstandenen Menge Kohlendioxid. Da unsere Luft aber so viel mehr Sauerstoff als Kohlendioxid hat, fällt die Sauerstoffabnahme in der Gesamtmischung kaum ins Gewicht. \n" +
+            "\n" +
+            "Unsere Gesundheit gefährde diese Entwicklung nicht, sagt der Physiker Thomas Leisner vom Institut für Meteorologie und Klimaforschung des KIT. „Wir können zwar erhöhte Konzentrationen des Gases schon ab 1.400 ppm als verbrauchte Luft wahrnehmen, beispielsweise in ‚schlecht‘ belüfteten Räumen, aber erst in sehr hohen Konzentrationen ab circa 80.000 ppm ist Kohlenstoffdioxid so giftig für den Körper, dass es tödlich wirkt.“\n\n Bliebe es bei einem Anstieg der Konzentration um circa 2 ppm pro Jahr, würde es Jahrhunderte dauern, bis es „dicke Luft“ gibt, und weitere Jahrtausende, bis Kohlenstoffdioxid unsere Gesundheit gefährdet. \n" +
+            "\n" +
+            "Dann können wir aufatmen, oder? Leider nicht, denn der erhöhte Kohlenstoffdioxidgehalt in der Atmosphäre hat heute schon verheerende Auswirkungen auf das Erdklima. Dabei hat Kohlenstoffdioxid grundsätzlich eine wichtige Aufgabe. Das Gas verteilt sich in der Atmosphäre und bildet eine schützende Decke, die verhindert, dass die Erde zu viel Wärme in den Weltraum abstrahlt.\n\n Dieser sogenannte Treibhauseffekt erzeugt ein optimales Klima für die Pflanzen und Tiere auf unserem Planeten. Aber: Mittlerweile sammeln sich immer größere Mengen des Spurengases in der Atmosphäre und verhindern, dass die Erde Wärme abgibt. Es kommt zum menschengemachten Treibhauseffekt.\n\n In der Folge verändert sich das Erdklima, das Wetter wird weltweit extremer und es entstehen Dürren, Überflutungen, extrem heiße Sommer, aber auch außergewöhnlich starke Stürme und Winter. Der menschengemachte Klimawandel bedroht ganze Lebensräume, Tier- und Pflanzenarten, die in komplexen Ökosystemen zusammenleben und damit auch unsere eigene Lebensgrundlage. \n" +
+            "\n" +
+            "Bevor uns also die Luft zum Atmen ausgeht, verlieren wir unseren Lebensraum durch extreme Klimaveränderungen. Das sieht auch Thomas Leisner so.\n" +
+            "\n" +
+            "Bei der Beantwortung der Frage hat uns Prof. Dr. Thomas Leisner unterstützt.\n\n Er ist Direktor des Institut für Meteorologie und Klimaforschung am Karlsruher Institut für Technologie und Professor für Umweltphysik an der Universität Heidelberg. ";
     /**
      * Creates new form TestForm
      */
@@ -137,7 +136,7 @@ public class FormInfos extends JPanel {
         jPanel1.setToolTipText("");
 
         CO2Label1.setForeground(new Color(255, 255, 255));
-        CO2Label1.setText("CO² normal");
+        CO2Label1.setText("CO² heute");
 
         jLabel2.setForeground(new Color(255, 255, 255));
         jLabel2.setText("400,00 ppm");
